@@ -1,0 +1,67 @@
+<div id="main-content" role="main" itemprop="mainContentOfPage">
+		  	<section>
+			<div id="page" class="container">
+				<div class="page-header">
+					<div class="row">
+						<div class="col-xs-12 col-md-3">
+							<img class="xs-marB20" src="<%= @membershipTier.membermgmt__image__c %>">
+						</div>
+						<div class="col-xs-12 col-md-8">
+							<h1 class="blue"><%= @membershipTier.name %> Membership <a href="/join?tier=<%= @membershipTier.id %>" class="btn btn-primary">Join NOW</a></h1>
+							<p class="lead"><%=raw @membershipTier.membermgmt__description__c %></p>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-xs-12 col-md-12 sm-marB20">
+						<ul class="pills">
+							<% @membershipBenefits.each do |b| %>
+							<li><%= b.membermgmt__description__c %></li>
+							<% end %>
+						</ul>
+					</div>
+				</div>
+				<div class="row">
+					<div class="panel highlight">
+						<blockquote>You're a part of the 5 million members who enjoy the benefits of SFDCLabs Memebership.</blockquote>
+					</div>
+				</div>
+			</div>
+		</section>
+
+
+
+		<section>
+			<div class="container">
+				<div class="row">
+					<div class="col-xs-12 col-md-12">
+						<h2>Additional Benefits &amp; Offers </h2>
+						<p>There's more to membership than we can even list. Explore SFDCLabs.com or visit your local SFDCLabs office to take advantage of everything your SFDCLabs membership offers.</p>
+					</div>
+					<ul class="pills">
+
+						<% @addlMembershipBenefits.each do |b| %>
+						<li><%= b.membermgmt__description__c %></li>
+						<% end %>
+
+					</ul>
+				</div>
+			</div>
+		</section>
+
+</div>
+
+<script>
+		jQuery(document).ready(function($){
+			$('#show-benefits').on('click', function(){
+				$('#benefits').slideToggle(300);
+			});
+
+			$('.footable').footable({
+				breakpoints: {
+			        phone: 480,
+			        tablet: 992
+			    }
+			});
+		});
+	</script>

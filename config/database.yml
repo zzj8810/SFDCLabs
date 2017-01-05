@@ -1,0 +1,28 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+
+# development:
+#   <<: *default
+#   database: d12atlkg403mdt
+#   user: ilyimsmzqqsuxt
+#   password: caf79ef2b209a6a46c3d863c07055a234b9af87eb67abdb9d6a38d54f85dc57c
+#   host: ec2-54-225-99-171.compute-1.amazonaws.com
+#   port: 5432
+
+# development:
+#   <<: *default
+#   database: d2v97d1qtibtal
+#   user: xqramvxcjrzjrh
+#   password: f38a6871c7bbf1e9740c8d1d97f33dbce96b5c1f6773d04800dcabc07e5f5cfc
+#   host: ec2-50-17-220-223.compute-1.amazonaws.com
+#   port: 5432
+
+development:
+  <<: *default
+  adapter: postgresql
+  host: localhost
+  database: membership_portal
+  username: pguser
+  password: pguser
